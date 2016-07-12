@@ -10,30 +10,28 @@ public class Main {
             enemy[i] =  (int) (Math.random() * 20) - 10; // -10 ~ 10
         }
 
-        int energe = getMinimalEnerge(enemy);
+        int energy = getMinimalEnergy(enemy);
 
-
-        simulation(energe, enemy);
+        simulation(energy, enemy);
     }
 
-    public static int getMinimalEnerge(int[] enemy){
+    public static int getMinimalEnergy(int[] enemy){
 
-        int totalEnerge = 0;
+        int totalEnergy = 0;
 
         if(enemy == null || enemy.length < 0){
-            return totalEnerge;
+            return totalEnergy;
         }
 
         int hp = 0;
         for(int i = 0 ; i < enemy.length ; i ++){
             hp += enemy[i];
             if(hp < 1){
-                totalEnerge += Math.abs(hp) + 1;
+                totalEnergy += Math.abs(hp) + 1;
                 hp = 1;
             }
         }
-
-        return totalEnerge ;
+        return totalEnergy ;
     }
 
 
